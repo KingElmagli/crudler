@@ -12,7 +12,7 @@ const Screen = ({ children }) => {
   return (
     <View style={styles.screen}>
       {children}
-      <StatusBar style="light" />
+      <StatusBar style="light"></StatusBar>
     </View>
   );
 };
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   screen: {
     padding: 15,
     flex: 1,
-    backgroundColor: "#e97070ff",
+    backgroundColor: "#e76413ff",
   },
 });
 
