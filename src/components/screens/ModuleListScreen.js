@@ -1,15 +1,30 @@
-import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { StyleSheet } from "react-native";
 import Screen from "../layout/Screen";
+import ModuleList from "../entity/modules/ModuleList.js";
+import RenderCount from "../UI/RenderCount.js";
+import initialModules from "../../data/modules.js";
 
-export const ModuleListScreen = () => {
-  //=> this is an arrow function so basically this is another syntax of writing a functions
+const ModuleListScreen = () => {
+  //Initialisations
+  //let modules = initialModules;
+
+  //State
+  const [modules, setModules] = useState(initialModules);
+
+  //Handlers
+
+  const handleDelete = (module) =>
+    setModules(modules.filter((item) => item.ModuleID !== module.ModuleID));
+
+  // View
   return (
-    <Screen style={styles.container}>
-      <Text>List</Text>
+    <Screen>
+      <RenderCount />
+      <ModuleList modules={modules} onSelect={handleDelete} />
     </Screen>
   );
 };
-
 const styles = StyleSheet.create({});
 
 export default ModuleListScreen;
