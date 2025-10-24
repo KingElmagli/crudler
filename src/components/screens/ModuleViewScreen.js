@@ -1,11 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import Screen from "../layout/Screen";
+import ModuleView from "../entity/modules/ModuleView";
 
-const ModuleViewScreen = () => {
-  //=> this is an arrow function so basically this is another syntax of writing a functions
+const ModuleViewScreen = ({ navigate, route }) => {
+  //Initialisations
+  const { module } = route.params;
+
+  //State.................
+  //handlers..............
+  //View..................
   return (
-    <Screen style={styles.container}>
-      <Text>View</Text>
+    <Screen>
+      <ModuleView module={module} />
     </Screen>
   );
 };

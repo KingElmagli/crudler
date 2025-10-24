@@ -1,5 +1,6 @@
 import { StyleSheet, ScrollView } from "react-native";
 import ModuleItem from "./ModuleItem";
+
 const ModuleList = ({ modules, onSelect }) => {
   //Initialistaion
   //State
